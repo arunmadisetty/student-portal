@@ -1,57 +1,56 @@
 <h1>Student Show Page</h1>
-<%= form_tag "/students/:id", method: "patch" do %>
- <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+  <%= form_tag "/students/#{@student['student_id']}", method: "patch" do %>
+  <input type="hidden" value="<%= @student["student_id"] %>" name="form_id">
   <div>
-    <input type="text" value="<%= @student["first_name"] %>" name="form_first_name">
+    First Name: <input type="text" value="<%= @student["first_name"] %>" name="form_first_name">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["last_name"] %>" name="form_last_name">
+    Last Name: <input type="text" value="<%= @student["last_name"] %>" name="form_last_name">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["email"] %>" name="form_email">
+    Email: <input type="text" value="<%= @student["email"] %>" name="form_email">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["phone_number"] %>" name="form_phone_number">
+    Phone Number: <input type="text" value="<%= @student["phone_number"] %>" name="form_phone_number">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["short_bio"] %>" name="form_short_bio">
+    Short Bio: <input type="text" value="<%= @student["short_bio"] %>" name="form_short_bio">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["linkedin_url"] %>" name="form_linkedin_url">
+    LinkedIn Url: <input type="text" value="<%= @student["linkedin_url"] %>" name="form_linkedin_url">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["twitter_handle"] %>" name="form_twitter_handle">
+    Twitter Handle: <input type="text" value="<%= @student["twitter_handle"] %>" name="form_twitter_handle">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["personal_blog_website_url"] %>" name="form_personal_blog_website_url">
+    Personal Blog: <input type="text" value="<%= @student["personal_blog_website_url"] %>" name="form_personal_blog_website_url">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["online_resume"] %>" name="form_online_resume">
+    Online Resume: <input type="text" value="<%= @student["online_resume"] %>" name="form_online_resume">
   </div>
     
   <div>
-    <input type="text" value="<%= @student["github_url"] %>" name="form_github_url">
+    Github: <input type="text" value="<%= @student["github_url"] %>" name="form_github_url">
   </div>
 
   <div>
-    <input type="text" value="<%= @student["photo"] %>" name="form_photo">
+    Photo: <input type="text" value="<%= @student["photo"] %>" name="form_photo">
   </div>
-  <input type="submit" value="Update">
+  <input type="submit" value="Update Student Info">
 
   <% end %>
-
 <h2>Experiences</h2>
 <%= form_tag "/experiences/:id", method: "post" do %>
   <div>
-    <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+    <input type="hidden" value="<%= @student["student_id"] %>" name="form_id">
   </div>
   <div>
     <input type="text" value="<%= @student["start_date"] %>" name="form_start_date">
