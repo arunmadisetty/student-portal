@@ -1,2 +1,8 @@
-<h1>This Works!</h1>
-@student
+<h1>Update</h1>
+
+<%= form_tag "/students/:id", method: "patch" do %>
+  <div>
+    ID: <input type="hidden" value="" name="form_id">
+  </div>
+  <input type="submit" value="Update Student">
+<% end %>
