@@ -47,3 +47,33 @@
   <input type="submit" value="Update">
 
   <% end %>
+
+<h2>Experiences</h2>
+<%= form_tag "/experiences/:id", method: "post" do %>
+  <div>
+    <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["start_date"] %>" name="form_start_date">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["end_date"] %>" name="form_end_date">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["job_title"] %>" name="form_job_title">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["company_name"] %>" name="form_company_name">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["details"] %>" name="form_details">
+  </div>
+  <input type="submit" value="Add new experience">
+<% end %>
+
+<h2>Skills</h2>
+<%= form_tag "/skills/:id", method: "post" do %>
+  <div>
+    <input type="text" value="<%= @student["skill_name"] %>" name="form_skill_name">
+  </div>
+<% end %>
