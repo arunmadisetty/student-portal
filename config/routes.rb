@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   #pizza time.
 
   # my personal branch
-  get "/students" => "students#index"
-  get "/students/:id" => "students#index"
-
 
   get "/students/:id" => "students#show"
   get "/students/:id" => "students#update"
 
+  get '/skills/:id' => "skills#show"
+
+  get '/experiences/:id' => "experiences#show"
 end
