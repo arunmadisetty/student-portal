@@ -1,3 +1,20 @@
 <h1>Educations show</h1>
 
-<%= @educations %>
+<%= form_tag "/educations/:id", method: "post" do %>
+    <div>
+      <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["start_date"] %>" name="form_start_date">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["degree"] %>" name="form_degree">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["university name"] %>" name="form_university_name">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["details"] %>" name="form_details">
+    </div>
+    <input type="submit" value="Add new education">
+  <% end %>
