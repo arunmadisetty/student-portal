@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/students" => "students#index"
   
   get "/students/:id" => "students#show"
-  get "/students/:id" => "students#update"
+  patch "/students/:id" => "students#update"
 
   get "/educations/:id" => "educations#show"
   get "/educations/:id/edit" => "educations#edit"
@@ -15,8 +15,5 @@ Rails.application.routes.draw do
 
   get "/capstones/:id/edit" => "capstones#edit"
   patch "/capstones/:id" => "capstones#update"
-
-
-
 
 end

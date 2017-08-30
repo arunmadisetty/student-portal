@@ -15,12 +15,12 @@ class StudentsController < ApplicationController
 
   # ]
   def index
-    @students = {
+    @students = [{
        id: 3, 
        first_name: "Fred",
        fast_name: "Calhoun",
        email: "fcalhoun4@email.com",
-       phone_number: 423-234-6543,
+       phone_number: "423-234-6543",
        short_bio: "Student at Actualize",
        linkedIn_url: "LinkedIn_URL",
        twitter_handle: "FredT",
@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
        online_resume_urlL: "http:www.fcalhoun4@yahoo.com",
        github_url: "http:www.Github/fredlcalhoun",
        photo: "me.jpg"
-      }
+    }]
 
     
     # response = Unirest.get("http:")
@@ -42,6 +42,8 @@ class StudentsController < ApplicationController
         id: 2, first_name: "Arun", last_name: "Madisetty", email: "arun@email.com", phone_number: "8892335437", short_bio: "He cool", linkedin_url: "linkedin website", twitter_handle: "twitter", personal_blog_website_url: "some website", online_resume: "resume1", github_url: "aruns git", photo: "some image"
       }
     render "show.html.erb"
+  end
+  
   def update
     @student = {
       id: 45, 

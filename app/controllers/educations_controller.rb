@@ -1,16 +1,25 @@
 class EducationsController < ApplicationController
 
-def show
-  @students = {
-    id: 3, 
-    start_date:
-    end_date:
-    degree:
-    university_name:
-    details: 
+  def create
+    @educations = Unirest.get("")
+    render "create.html.erb"
+  end
 
-  }
-end
+  def show
+    @educations = Unirest.get("")
+    render "show.html.erb"
+  end
+
+  def edit
+    @educations = Unirest.get("")
+    render "edit.html.erb"
+  end
+
+  def  update
+    @educations = Unirest.get("")
+    render "update.html.erb"
+  end
+
 
 
 end
