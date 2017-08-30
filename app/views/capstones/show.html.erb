@@ -1,3 +1,20 @@
 <h1>Capstones</h1>
 
-<%= @capstones %>
+<%= form_tag "/capstones/:id", method: "post" do %>
+    <div>
+      <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["name"] %>" name="form_name">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["description"] %>" name="form_description">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["url"] %>" name="form_url">
+    </div>
+    <div>
+      <input type="text" value="<%= @student["screenshot"] %>" name="form_screen_shot">
+    </div>
+    <input type="submit" value="Add new experience">
+  <% end %>
