@@ -1,6 +1,6 @@
 <h1>Student Show Page</h1>
-<%= form_tag "/students/:id", method: "patch" do %>
- <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+  <%= form_tag "/students/:id", method: "patch" do %>
+  <input type="hidden" value="<%= @student["student_id"] %>" name="form_id">
   <div>
     <input type="text" value="<%= @student["first_name"] %>" name="form_first_name">
   </div>
@@ -44,14 +44,13 @@
   <div>
     <input type="text" value="<%= @student["photo"] %>" name="form_photo">
   </div>
-  <input type="submit" value="Update">
+  <input type="submit" value="Update Student Info">
 
   <% end %>
-
 <h2>Experiences</h2>
 <%= form_tag "/experiences/:id", method: "post" do %>
   <div>
-    <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+    <input type="hidden" value="<%= @student["student_id"] %>" name="form_id">
   </div>
   <div>
     <input type="text" value="<%= @student["start_date"] %>" name="form_start_date">
