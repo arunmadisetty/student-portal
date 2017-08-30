@@ -1,44 +1,79 @@
-<h1>Student page</h1>
-<div>
-<%= @student[:first_name] %>
-</div>
-  
-<div>
-<%= @student[:last_name] %>
-</div>
-  
-<div>
-<%= @student[:email] %>
-</div>
-  
-<div>
-<%= @student[:phone_number] %>
-</div>
-  
-<div>
-<%= @student[:short_bio] %>
-</div>
-  
-<div>
-<%= @student[:linkedin_url] %>
-</div>
-  
-<div>
-<%= @student[:twitter_handle] %>
-</div>
-  
-<div>
-<%= @student[:personal_blog_website_url] %>
-</div>
-  
-<div>
-<%= @student[:online_resume] %>
-</div>
-  
-<div>
-<%= @student[:github_url] %>
-</div>
-  
-<div>
-<%= @student[:photo] %>
-</div>
+<h1>Student Show Page</h1>
+<%= form_tag "/students/:id", method: "patch" do %>
+ <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+  <div>
+    <input type="text" value="<%= @student["first_name"] %>" name="form_first_name">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["last_name"] %>" name="form_last_name">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["email"] %>" name="form_email">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["phone_number"] %>" name="form_phone_number">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["short_bio"] %>" name="form_short_bio">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["linkedin_url"] %>" name="form_linkedin_url">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["twitter_handle"] %>" name="form_twitter_handle">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["personal_blog_website_url"] %>" name="form_personal_blog_website_url">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["online_resume"] %>" name="form_online_resume">
+  </div>
+    
+  <div>
+    <input type="text" value="<%= @student["github_url"] %>" name="form_github_url">
+  </div>
+
+  <div>
+    <input type="text" value="<%= @student["photo"] %>" name="form_photo">
+  </div>
+  <input type="submit" value="Update">
+
+  <% end %>
+
+<h2>Experiences</h2>
+<%= form_tag "/experiences/:id", method: "post" do %>
+  <div>
+    <input type="hidden" value="<%= @student["id"] %>" name="form_id">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["start_date"] %>" name="form_start_date">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["end_date"] %>" name="form_end_date">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["job_title"] %>" name="form_job_title">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["company_name"] %>" name="form_company_name">
+  </div>
+  <div>
+    <input type="text" value="<%= @student["details"] %>" name="form_details">
+  </div>
+  <input type="submit" value="Add new experience">
+<% end %>
+
+<h2>Skills</h2>
+<%= form_tag "/skills/:id", method: "post" do %>
+  <div>
+    <input type="text" value="<%= @student["skill_name"] %>" name="form_skill_name">
+  </div>
+<% end %>
